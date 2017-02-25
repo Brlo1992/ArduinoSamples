@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,20 @@ using ArduinoUploader.Hardware;
 namespace ArduinoGui {
     public partial class Form1 : Form
     {
-        private ArduinoDriver.ArduinoDriver driver;
+        private readonly SerialPort _port = new SerialPort();
         public Form1() {
             InitializeComponent();
-            driver = new ArduinoDriver.ArduinoDriver(ArduinoModel.UnoR3);
+            _port.BaudRate = 9600;
+            _port.PortName = "COM5";
+            _port.Open();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            var request = new DigitalReadRequest();
-            driver.Send()
+            while (true)
+            {
+                var data = _port.ReadLine();
+                textBox1.Text = data;
+            }
         }
     }
 }

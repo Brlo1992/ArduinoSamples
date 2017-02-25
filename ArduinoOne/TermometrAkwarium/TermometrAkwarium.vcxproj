@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{83144C56-5F3C-4728-B6F4-C4A554B266DA}</ProjectGuid>
-    <RootNamespace>test</RootNamespace>
-    <ProjectName>test</ProjectName>
+    <ProjectGuid>{33EED356-F189-4C99-BDFB-106D2306F40A}</ProjectGuid>
+    <RootNamespace>TermometrAkwarium</RootNamespace>
+    <ProjectName>TermometrAkwarium</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,9 +77,13 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="test.ino">
+    <None Include="TermometrAkwarium.ino">
       <FileType>CppCode</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SimpleArduino\__vm\.SimpleArduino.vsarduino.h" />
+    <ClInclude Include="__vm\.TermometrAkwarium.vsarduino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
